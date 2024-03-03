@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "title": "Change air filter",
+        "text": "This needs to be done on the first of the month",
+        "id": "3f442248-10b4-4161-93f0-6b61d731c501"
+    },
+    {
+        "title": "Take out the trash",
+        "text": "Complete as needed",
+        "id": "570f1e11-86ad-480c-ac02-4be00bb20598"
+    },
+    {
+        "title": "Pay bills",
+        "text": "Do this for all utilities",
+        "id": "6177e386-1039-469a-a6df-819331a10d4b"
+    }
+]
