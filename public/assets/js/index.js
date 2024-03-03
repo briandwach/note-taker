@@ -102,8 +102,17 @@ const handleNoteDelete = (e) => {
 };
 
 // Sets the activeNote and displays it
-const handleNoteView = (e) => {
+// Customized this to have different event handling if list element is clicked
+const handleNoteViewLi = (e) => {
   e.preventDefault();
+  activeNote = JSON.parse(e.target.getAttribute('data-note'));
+  renderActiveNote();
+};
+
+// Sets the activeNote and displays it
+// Added and customized this to have different event handling if just the span element is clicked
+const handleNoteViewSpan = (e) => {
+  e.stopPropagation();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
 };
@@ -144,7 +153,13 @@ const renderNoteList = async (notes) => {
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
-    spanEl.addEventListener('click', handleNoteView);
+
+    // Adding conditional for better UI experience.  Event listeners are not needed when there are no list items.
+    // Added second event listener for more intuitive application response when clicking elements
+    if (delBtn) {
+      liEl.addEventListener('click', handleNoteViewLi);
+      spanEl.addEventListener('click', handleNoteViewSpan);
+    }
 
     liEl.append(spanEl);
 

@@ -5,7 +5,9 @@ body {
   padding: 0;
 }
 
-.save-note, .new-note, .clear-btn {
+.save-note,
+.new-note,
+.clear-btn {
   display: none;
 }
 
@@ -30,9 +32,11 @@ body {
   padding-top: 15px;
 }
 
+/* Changed note-title height to fit-content so bottom of text is not cut off */
 .note-title {
-  height: 50px;
-  margin-top: 13px;
+  /* height: 50px; */
+  height: fit-content;
+  /* margin-top: 13px; */
   font-size: 3rem;
 }
 
@@ -70,9 +74,34 @@ body {
   cursor: pointer;
 }
 
+/* Added hover property to delete button for improved user experience */
+.list-container i:hover {
+  border: 1px solid #757575;
+  border-radius: 2px;
+}
+
 .list-container .list-group-item {
   border-left: none;
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+/* Added media quiries for mobile.  Avoids title getting cut off and removes hover properties. */
+@media screen and (max-width: 880px) {
+  .note-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .note-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .list-container i:hover {
+    border: none;
+  }
 }
