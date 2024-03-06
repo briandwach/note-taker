@@ -87,7 +87,7 @@ body {
   cursor: pointer;
 }
 
-/* Added media quiries for mobile.  Avoids title getting cut off and removes hover properties. */
+/* Added media quiries for mobile.  Avoids title getting cut off and removes added hover properties. */
 @media screen and (max-width: 880px) {
   .note-title {
     font-size: 2rem;
